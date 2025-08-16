@@ -1,0 +1,101 @@
+﻿@page
+@model web1.Pages.CopiaModel
+@{
+    Layout = "_Layoutcopia";
+    ViewData["Title"] = "Lista de Tareas";
+}
+
+<h2>Aplicación de gestión de tareas</h2>
+<p>Crea, organiza y marca tus tareas diarias.</p>
+
+<form method="get">
+    <label>Filtrar: </label>
+    <select name="Estado">
+        <option value="todas" selected="@(Model.Estado?.ToLower()=="todas")">Todas</option>
+        <option value="pendientes" selected="@(Model.Estado?.ToLower()=="pendientes")">Pendientes</option>
+        <option value="completadas" selected="@(Model.Estado?.ToLower()=="completadas")">Completadas</option>
+    </select>
+    <button type="submit">Aplicar</button>
+</form>
+
+<hr />
+
+<h3>Nueva tarea</h3>
+<form method="post" asp-page-handler="Agregar">
+    <label>Título:</label>
+    <input asp-for="NuevoTitulo" />
+    <br />
+    <label>Descripción:</label>
+    <input asp-for="NuevaDescripcion" />
+    <br />
+    <label>Fecha de vencimiento:</label>
+    <input asp-for="NuevaFecha" type="date" />
+    <br />
+    <button>Agregar</button>
+</form>
+
+<hr />
+
+@if (Model.EditarId > 0)
+{
+    <h3>Editar tarea #@Model.EditarId</h3>
+    <form method="post" asp-page-handler="GuardarEdicion">
+        <input type="hidden" asp-for="EditarId" />
+        <label>Título:</label>
+        <input asp-for="EditarTitulo" />
+        <br />
+        <label>Descripción:</label>
+        <input asp-for="EditarDescripcion" />
+        <br />
+        <label>Fecha de vencimiento:</label>
+        <input asp-for="EditarFecha" type="date" />
+        <br />
+        <button>Guardar</button>
+        <a asp-page="./Copia" asp-route-Estado="@Model.Estado">Cancelar</a>
+    </form>
+    <hr />
+}
+
+<h3>Lista de tareas</h3>
+@if (Model.Tareas.Count == 0)
+{
+    <p>No hay tareas.</p>
+}
+else
+{
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>#</th>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Vence</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+        @foreach (var t in Model.Tareas)
+        {
+            <tr>
+                <td>@t.Id</td>
+                <td>@t.Titulo</td>
+                <td>@t.Descripcion</td>
+                <td>@(t.FechaVencimiento?.ToString("yyyy-MM-dd") ?? "-")</td>
+                <td>@(t.EstaCompletada ? "Completada" : "Pendiente")</td>
+                <td>
+                    <form method="post" asp-page-handler="CambiarEstado" style="display:inline">
+                        <input type="hidden" name="id" value="@t.Id" />
+                        <button>@(t.EstaCompletada ? "Marcar pendiente" : "Marcar completada")</button>
+                    </form>
+                    <form method="get" asp-page-handler="Editar" style="display:inline">
+                        <input type="hidden" name="id" value="@t.Id" />
+                        <input type="hidden" name="Estado" value="@Model.Estado" />
+                        <button>Editar</button>
+                    </form>
+                    <form method="post" asp-page-handler="Eliminar" style="display:inline" onsubmit="return confirm('¿Eliminar tarea?');">
+                        <input type="hidden" name="id" value="@t.Id" />
+                        <button>Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+}
