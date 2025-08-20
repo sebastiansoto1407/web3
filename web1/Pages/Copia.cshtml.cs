@@ -1,131 +1,90 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Text.Json;
 
 namespace web1.Pages
 {
     public class CopiaModel : PageModel
     {
-        //puse clases
-        public class Tarea
+        // === Modelo que calza con el JSON ===
+        public class TareaJson
         {
-            public int Id { get; set; }
-            public string? Titulo { get; set; }
-            public string? Descripcion { get; set; }
-            public DateTime? FechaVencimiento { get; set; }
-            public bool EstaCompletada { get; set; }
+            public string? NombreTarea { get; set; }
+            public string? FechaVencimiento { get; set; }  // viene como dd/MM/yyyy en texto
+            public string? Estado { get; set; }            // "Pendiente" | "En curso" | "Finalizado"
         }
 
-        // la lista
-        private static readonly List<Tarea> ListaTareas = new();
-        private static int _contadorId = 1;
+        private static List<TareaJson> _todas = new();    // cache en memoria
+        private readonly IWebHostEnvironment _env;
+        public CopiaModel(IWebHostEnvironment env) => _env = env;
 
-        //creacion de tareas
-        [BindProperty] public string? NuevoTitulo { get; set; }
-        [BindProperty] public string? NuevaDescripcion { get; set; }
-        [BindProperty] public DateTime? NuevaFecha { get; set; }
-
-        //editar una tarea xd
-        [BindProperty] public int EditarId { get; set; }
-        [BindProperty] public string? EditarTitulo { get; set; }
-        [BindProperty] public string? EditarDescripcion { get; set; }
-        [BindProperty] public DateTime? EditarFecha { get; set; }
-
-        //filtros
+        // === Parámetros GET ===
         [BindProperty(SupportsGet = true)]
-        public string? Estado { get; set; } = "todas";
+        public int Pagina { get; set; } = 1;
 
-        //lista
-        public List<Tarea> Tareas { get; private set; } = new();
+        [BindProperty(SupportsGet = true)]
+        public int Tamano { get; set; } = 5; // permitido: 5..10
 
-        
+        [BindProperty(SupportsGet = true)]
+        public string? FiltroEstado { get; set; } = "todos"; // todos | pendientes | en-curso | finalizados
+
+        // === Salida a la vista ===
+        public List<TareaJson> Tareas { get; private set; } = new();
+        public int TotalPaginas { get; private set; }
+        public int TotalRegistros { get; private set; }
+
+        // Contadores por estado (globales)
+        public int CntPendientes { get; private set; }
+        public int CntEnCurso { get; private set; }
+        public int CntFinalizados { get; private set; }
+
         public void OnGet()
         {
-            Tareas = FiltrarTareas(Estado);
-        }
-
-        //agrego de tareas
-        public IActionResult OnPostAgregar()
-        {
-            if (!string.IsNullOrWhiteSpace(NuevoTitulo))
+            // 1) Cargar JSON una sola vez
+            if (_todas.Count == 0)
             {
-                ListaTareas.Add(new Tarea
+                var ruta = Path.Combine(_env.WebRootPath, "data", "tareas.json");
+                if (System.IO.File.Exists(ruta))
                 {
-                    Id = _contadorId++,
-                    Titulo = NuevoTitulo.Trim(),
-                    Descripcion = NuevaDescripcion?.Trim(),
-                    FechaVencimiento = NuevaFecha,
-                    EstaCompletada = false
-                });
-            }
-            return RedirectToPage(new { Estado });
-        }
-
-        //cambio de estados
-        public IActionResult OnPostCambiarEstado(int id)
-        {
-            var tarea = ListaTareas.FirstOrDefault(x => x.Id == id);
-            if (tarea != null)
-            {
-                tarea.EstaCompletada = !tarea.EstaCompletada;
-            }
-            return RedirectToPage(new { Estado });
-        }
-
-        //eliminar tarea
-        public IActionResult OnPostEliminar(int id)
-        {
-            ListaTareas.RemoveAll(x => x.Id == id);
-            return RedirectToPage(new { Estado });
-        }
-
-        //datos de edicion
-        public void OnGetEditar(int id)
-        {
-            var tarea = ListaTareas.FirstOrDefault(x => x.Id == id);
-            if (tarea != null)
-            {
-                EditarId = tarea.Id;
-                EditarTitulo = tarea.Titulo;
-                EditarDescripcion = tarea.Descripcion;
-                EditarFecha = tarea.FechaVencimiento;
-            }
-            Tareas = FiltrarTareas(Estado);
-        }
-
-        //guardar eicion
-        public IActionResult OnPostGuardarEdicion()
-        {
-            var tarea = ListaTareas.FirstOrDefault(x => x.Id == EditarId);
-            if (tarea != null)
-            {
-                if (!string.IsNullOrWhiteSpace(EditarTitulo))
-                    tarea.Titulo = EditarTitulo.Trim();
-                tarea.Descripcion = EditarDescripcion?.Trim();
-                tarea.FechaVencimiento = EditarFecha;
-            }
-            return RedirectToPage(new { Estado });
-        }
-
-        //filtros cambiar
-        private static List<Tarea> FiltrarTareas(string? estado)
-        {
-            IEnumerable<Tarea> consulta = ListaTareas;
-            switch (estado?.ToLowerInvariant())
-            {
-                case "completadas":
-                    consulta = consulta.Where(x => x.EstaCompletada);
-                    break;
-                case "pendientes":
-                    consulta = consulta.Where(x => !x.EstaCompletada);
-                    break;
-                default:
-                    break; // termine la tarea
+                    var json = System.IO.File.ReadAllText(ruta);
+                    _todas = JsonSerializer.Deserialize<List<TareaJson>>(
+                        json,
+                        new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
+                    ) ?? new List<TareaJson>();
+                }
             }
 
-            return consulta
-                .OrderBy(x => x.EstaCompletada)
-                .ThenBy(x => x.FechaVencimiento ?? DateTime.MaxValue)
+            // 2) Contadores globales por estado
+            CntPendientes = _todas.Count(t => NormalizarEstado(t.Estado) == "pendientes");
+            CntEnCurso = _todas.Count(t => NormalizarEstado(t.Estado) == "en-curso");
+            CntFinalizados = _todas.Count(t => NormalizarEstado(t.Estado) == "finalizados");
+
+            // 3) Aplicar filtro
+            IEnumerable<TareaJson> consulta = _todas;
+            var filtro = (FiltroEstado ?? "todos").Trim().ToLowerInvariant();
+            if (filtro != "todos")
+                consulta = consulta.Where(t => NormalizarEstado(t.Estado) == filtro);
+
+            // 4) Paginación (tamaños permitidos: 5..10)
+            if (Tamano < 5 || Tamano > 10) Tamano = 5;   // <-- CAMBIO
+            TotalRegistros = consulta.Count();
+            TotalPaginas = Math.Max(1, (int)Math.Ceiling(TotalRegistros / (double)Tamano));
+            if (Pagina < 1) Pagina = 1;
+            if (Pagina > TotalPaginas) Pagina = TotalPaginas;
+
+            Tareas = consulta
+                .Skip((Pagina - 1) * Tamano)
+                .Take(Tamano)
                 .ToList();
+        }
+
+        private static string NormalizarEstado(string? estado)
+        {
+            if (string.IsNullOrWhiteSpace(estado)) return "pendientes";
+            var e = estado.Trim().ToLowerInvariant();
+            if (e.Contains("curso")) return "en-curso";
+            if (e.StartsWith("final")) return "finalizados";
+            return "pendientes";
         }
     }
 }

@@ -53,3 +53,38 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+
+# ================================
+# Visual Studio / .NET / ASP.NET
+# ================================
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+Debug/
+Release/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# ASP.NET Core
+wwwroot/lib/
+*.db
+*.db-shm
+*.db-wal
+
+# Backup/Temp
+*.log
+*.tmp
+*.bak
+*.backup
+
