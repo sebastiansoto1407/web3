@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
-
+//actualizado 20/08 meti publicss
 namespace web1.Pages
 {
     public class CopiaModel : PageModel
