@@ -58,7 +58,7 @@ namespace web1.Pages
             if (filtro != "todos")
                 consulta = consulta.Where(t => NormalizarEstado(t.Estado) == filtro);
 
-            if (Tamano < 5 || Tamano > 10) Tamano = 5;   
+            if (Tamano < 5 || Tamano > 11) Tamano = 5;   
             TotalRegistros = consulta.Count();
             TotalPaginas = Math.Max(1, (int)Math.Ceiling(TotalRegistros / (double)Tamano));
             if (Pagina < 1) Pagina = 1;
