@@ -1,4 +1,5 @@
 wwwroot\css\site.css
+wwwroot\data\tareas.json
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -35,4 +36,3 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\data\tareas.json
