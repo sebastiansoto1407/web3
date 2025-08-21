@@ -5,91 +5,104 @@
     ViewData["Title"] = "Tareas (JSON) con filtros";
 }
 
-<h2>Lista de Tareas (desde JSON)</h2>
+<div class="container mt-2">
 
-<!--los estados-->
-<p>
-    <strong>Estados:</strong>
-    <span style="background:#eee; padding:3px 6px; border-radius:4px; margin-right:6px;">
-        Pendientes: @Model.CntPendientes
-    </span>
-    <span style="background:#eee; padding:3px 6px; border-radius:4px; margin-right:6px;">
-        En curso: @Model.CntEnCurso
-    </span>
-    <span style="background:#eee; padding:3px 6px; border-radius:4px;">
-        Finalizados: @Model.CntFinalizados
-    </span>
-</p>
+    <h2 class="mb-2">Lista de Tareas</h2>
+    <p class="text-muted">Fuente: <code>wwwroot/data/tareas.json</code></p>
 
-<!-- Filtros y tamaño de página -->
-<form method="get">
-    <label>Estado: </label>
-    <select name="FiltroEstado">
-        <option value="todos" selected="@(Model.FiltroEstado?.ToLower() == "todos")">Todos</option>
-        <option value="pendientes" selected="@(Model.FiltroEstado?.ToLower() == "pendientes")">Pendientes</option>
-        <option value="en-curso" selected="@(Model.FiltroEstado?.ToLower() == "en-curso")">En curso</option>
-        <option value="finalizados" selected="@(Model.FiltroEstado?.ToLower() == "finalizados")">Finalizados</option>
-    </select>
-
-    <label style="margin-left:10px;">Tamaño de página: </label>
-    <select name="Tamano">
-        <option value="5" selected="@(Model.Tamano == 5)">5</option>
-        <option value="6" selected="@(Model.Tamano == 6)">6</option>
-        <option value="7" selected="@(Model.Tamano == 7)">7</option>
-        <option value="8" selected="@(Model.Tamano == 8)">8</option>
-        <option value="9" selected="@(Model.Tamano == 9)">9</option>
-        <option value="10" selected="@(Model.Tamano == 10)">10</option>
-    </select>
-
-
-    <button type="submit">Aplicar</button>
-</form>
-
-<hr />
-
-@if (Model.Tareas.Count == 0)
-{
-    <p>No hay tareas para mostrar.</p>
-}
-else
-{
-    <table border="1" cellpadding="6">
-        <tr>
-            <th>Tarea</th>
-            <th>Fecha de vencimiento</th>
-            <th>Estado</th>
-        </tr>
-        @foreach (var t in Model.Tareas)
-        {
-            <tr>
-                <td>@t.NombreTarea</td>
-                <td>@t.FechaVencimiento</td>
-                <td>@t.Estado</td>
-            </tr>
-        }
-    </table>
-
-    <!-- Paginación: conserva filtro y tamaño -->
-    <div style="margin-top:10px;">
-        @if (Model.Pagina > 1)
-        {
-            <a asp-page="./Copia"
-               asp-route-Pagina="@(Model.Pagina - 1)"
-               asp-route-Tamano="@Model.Tamano"
-               asp-route-FiltroEstado="@Model.FiltroEstado">« Anterior</a>
-        }
-
-        <span style="margin:0 8px;">
-            Página @Model.Pagina de @Model.TotalPaginas
-            (total @Model.TotalRegistros)
-        </span>
-
-        @if (Model.Pagina < Model.TotalPaginas)
-        {
-            <a asp-page="./Copia"
-               asp-route-Pagina="@(Model.Pagina + 1)"
-               asp-route-Tamano="@Model.Tamano"
-               asp-route-FiltroEstado="@Model.FiltroEstado">Siguiente »</a>
-        }
+    <!-- 21/08Estado global -->
+    <div class="d-flex gap-2 flex-wrap mb-3">
+        <span class="badge rounded-pill bg-secondary">Pendientes: @Model.CntPendientes</span>
+        <span class="badge rounded-pill bg-info">En curso: @Model.CntEnCurso</span>
+        <span class="badge rounded-pill bg-success">Finalizados: @Model.CntFinalizados</span>
     </div>
-}
+
+    <form method="get" class="row g-2 align-items-end mb-3">
+        <div class="col-12 col-sm-6 col-lg-4">
+            <label class="form-label mb-1">Estado</label>
+            <select name="FiltroEstado" class="form-select form-select-sm">
+                <option value="todos" selected="@(Model.FiltroEstado?.ToLower() == "todos")">Todos</option>
+                <option value="pendientes" selected="@(Model.FiltroEstado?.ToLower() == "pendientes")">Pendientes</option>
+                <option value="en-curso" selected="@(Model.FiltroEstado?.ToLower() == "en-curso")">En curso</option>
+                <option value="finalizados" selected="@(Model.FiltroEstado?.ToLower() == "finalizados")">Finalizados</option>
+            </select>
+        </div>
+        <div class="col-6 col-sm-3 col-lg-2">
+            <label class="form-label mb-1">Tamaño de página</label>
+            <select name="Tamano" class="form-select form-select-sm">
+                <option value="5" selected="@(Model.Tamano == 5)">5</option>
+                <option value="6" selected="@(Model.Tamano == 6)">6</option>
+                <option value="7" selected="@(Model.Tamano == 7)">7</option>
+                <option value="8" selected="@(Model.Tamano == 8)">8</option>
+                <option value="9" selected="@(Model.Tamano == 9)">9</option>
+                <option value="10" selected="@(Model.Tamano == 10)">10</option>
+            </select>
+        </div>
+        <div class="col-6 col-sm-3 col-lg-2">
+            <button type="submit" class="btn btn-primary btn-sm w-100">Aplicar</button>
+        </div>
+    </form>
+
+    <div class="card shadow-sm">
+        <div class="card-header py-2">
+            <strong>Resultados</strong>
+            <span class="text-muted">· Página @Model.Pagina de @Model.TotalPaginas · Total @Model.TotalRegistros</span>
+        </div>
+
+        <div class="card-body p-0">
+            @if (Model.Tareas.Count == 0)
+            {
+                <div class="p-4 text-center text-muted">No hay tareas para mostrar.</div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-sm table-striped table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width:50%;">Tarea</th>
+                                <th style="width:20%;">Vencimiento</th>
+                                <th style="width:20%;">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var t in Model.Tareas)
+                            {
+                                var estado = (t.Estado ?? "").ToLower();
+                                var clase = estado.Contains("final") ? "bg-success"
+                                : estado.Contains("curso") ? "bg-info"
+                                : "bg-secondary";
+
+                                <tr>
+                                    <td>@t.NombreTarea</td>
+                                    <td>@t.FechaVencimiento</td>
+                                    <td><span class="badge @clase">@t.Estado</span></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+
+        <!-- Paginacion -->
+        <div class="card-footer d-flex justify-content-between align-items-center py-2">
+            <div class="small text-muted">
+                Mostrando @Model.Tareas.Count de @Model.TotalRegistros
+            </div>
+            <div class="d-flex gap-2">
+                <a class="btn btn-outline-secondary btn-sm @(Model.Pagina <= 1 ? "disabled" : "")"
+                   asp-page="./Copia"
+                   asp-route-Pagina="@(Model.Pagina - 1)"
+                   asp-route-Tamano="@Model.Tamano"
+                   asp-route-FiltroEstado="@Model.FiltroEstado">« Anterior</a>
+
+                <a class="btn btn-outline-secondary btn-sm @(Model.Pagina >= Model.TotalPaginas ? "disabled" : "")"
+                   asp-page="./Copia"
+                   asp-route-Pagina="@(Model.Pagina + 1)"
+                   asp-route-Tamano="@Model.Tamano"
+                   asp-route-FiltroEstado="@Model.FiltroEstado">Siguiente »</a>
+            </div>
+        </div>
+    </div>
+</div>

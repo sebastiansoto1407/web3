@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
-//configure el json
+//configure el json en wwwroot
 namespace web1.Pages
 {
     public class CopiaModel : PageModel

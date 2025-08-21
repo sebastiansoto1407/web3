@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\web3git\\web3\\web1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3git\\web3\\web1\\pages\\copia.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\copia.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3git\\web3\\web1\\pages\\copia.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\copia.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3git\\web3\\web1\\pages\\copia.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\copia.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3git\\web3\\web1\\wwwroot\\data\\tareas.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -58,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,28 +90,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Copia.cshtml.cs",
               "DocumentMoniker": "E:\\web3git\\web3\\web1\\Pages\\Copia.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Copia.cshtml.cs",
               "ToolTip": "E:\\web3git\\web3\\web1\\Pages\\Copia.cshtml.cs",
               "RelativeToolTip": "Pages\\Copia.cshtml.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAuwAMAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAswE8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-15T23:38:55.259Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Copia.cshtml",
               "DocumentMoniker": "E:\\web3git\\web3\\web1\\Pages\\Copia.cshtml",
               "RelativeDocumentMoniker": "Pages\\Copia.cshtml",
-              "ToolTip": "E:\\web3git\\web3\\web1\\Pages\\Copia.cshtml",
-              "RelativeToolTip": "Pages\\Copia.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "ToolTip": "E:\\web3git\\web3\\web1\\Pages\\Copia.cshtml*",
+              "RelativeToolTip": "Pages\\Copia.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-15T23:38:24.719Z"
+              "WhenOpened": "2025-08-15T23:38:24.719Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
