@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "D:\\web3\\web3\\web1\\wwwroot\\data\\tareas.json",
+      "PackagePath": "staticwebassets\\data\\tareas.json"
+    },
+    {
       "Id": "D:\\web3\\web3\\web1\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

@@ -1,0 +1,32 @@
+﻿@page
+@model web1.Pages.CrearModel
+@{
+    Layout = "_Layoutcopia";
+    ViewData["Title"] = "Nueva tarea";
+}
+
+<div class="container mt-3">
+    <h3 class="mb-3">Nueva tarea</h3>
+
+    <form method="post" class="row g-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="col-12">
+            <label asp-for="Input.NombreTarea" class="form-label">Nombre de la tarea</label>
+            <input asp-for="Input.NombreTarea" class="form-control" />
+            <span asp-validation-for="Input.NombreTarea" class="text-danger"></span>
+        </div>
+
+        <div class="col-sm-6">
+            <label asp-for="Input.FechaVencimiento" class="form-label">Vencimiento</label>
+            <input asp-for="Input.FechaVencimiento" type="date" class="form-control" />
+            <span asp-validation-for="Input.FechaVencimiento" class="text-danger"></span>
+        </div>
+
+
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,19 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
-//configure el json en wwwroot
+
 namespace web1.Pages
 {
+    // configure el json en wwwroot
     public class CopiaModel : PageModel
     {
         public class TareaJson
         {
             public string? NombreTarea { get; set; }
-            public string? FechaVencimiento { get; set; }  
-            public string? Estado { get; set; }            
+            public string? FechaVencimiento { get; set; }
+            public string? Estado { get; set; }
         }
 
-        private static List<TareaJson> _todas = new();    
+        private static List<TareaJson> _todas = new();
         private readonly IWebHostEnvironment _env;
         public CopiaModel(IWebHostEnvironment env) => _env = env;
 
@@ -21,10 +22,13 @@ namespace web1.Pages
         public int Pagina { get; set; } = 1;
 
         [BindProperty(SupportsGet = true)]
-        public int Tamano { get; set; } = 5; 
+        public int Tamano { get; set; } = 5;
 
         [BindProperty(SupportsGet = true)]
-        public string? FiltroEstado { get; set; } = "todos"; 
+        public string? FiltroEstado { get; set; } = "todos";
+
+        [BindProperty(SupportsGet = true)]
+        public bool Refrescar { get; set; } = false;
 
         public List<TareaJson> Tareas { get; private set; } = new();
         public int TotalPaginas { get; private set; }
@@ -36,7 +40,7 @@ namespace web1.Pages
 
         public void OnGet()
         {
-            if (_todas.Count == 0)
+            if (_todas.Count == 0 || Refrescar)
             {
                 var ruta = Path.Combine(_env.WebRootPath, "data", "tareas.json");
                 if (System.IO.File.Exists(ruta))
@@ -46,6 +50,10 @@ namespace web1.Pages
                         json,
                         new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
                     ) ?? new List<TareaJson>();
+                }
+                else
+                {
+                    _todas = new List<TareaJson>();
                 }
             }
 
@@ -58,9 +66,10 @@ namespace web1.Pages
             if (filtro != "todos")
                 consulta = consulta.Where(t => NormalizarEstado(t.Estado) == filtro);
 
-            if (Tamano < 5 || Tamano > 11) Tamano = 5;   
+            if (Tamano < 5 || Tamano > 11) Tamano = 5;
             TotalRegistros = consulta.Count();
             TotalPaginas = Math.Max(1, (int)Math.Ceiling(TotalRegistros / (double)Tamano));
+
             if (Pagina < 1) Pagina = 1;
             if (Pagina > TotalPaginas) Pagina = TotalPaginas;
 
