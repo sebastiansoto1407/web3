@@ -27,6 +27,30 @@ namespace web1.Pages
 
         public void OnGet() { }
 
-        
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+                return Page();
+
+            var ruta = Path.Combine(_env.WebRootPath, "data", "tareas.json");
+            var lista = new List<TareaJson>();
+
+            if (System.IO.File.Exists(ruta))
+            {
+                var json = System.IO.File.ReadAllText(ruta);
+                lista = JsonSerializer.Deserialize<List<TareaJson>>(json,
+                    new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new List<TareaJson>();
+            }
+
+            if (DateTime.TryParse(Input.FechaVencimiento, out var dt))
+                Input.FechaVencimiento = dt.ToString("dd/MM/yyyy");
+
+            lista.Add(Input);
+
+            var nuevoJson = JsonSerializer.Serialize(lista, new JsonSerializerOptions { WriteIndented = true });
+            System.IO.File.WriteAllText(ruta, nuevoJson);
+
+            return RedirectToPage("Copia", new { Refrescar = true });
+        }
     }
 }

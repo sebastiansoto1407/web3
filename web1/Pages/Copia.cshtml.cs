@@ -40,6 +40,7 @@ namespace web1.Pages
 
         public void OnGet()
         {
+            //cargar o recargar datos
             if (_todas.Count == 0 || Refrescar)
             {
                 var ruta = Path.Combine(_env.WebRootPath, "data", "tareas.json");

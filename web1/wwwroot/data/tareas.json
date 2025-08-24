@@ -163,5 +163,10 @@
     "NombreTarea": "Buscar nuevas recetas",
     "FechaVencimiento": "20/08/2025",
     "Estado": "Pendiente"
+  },
+  {
+    "NombreTarea": "comprar soda",
+    "FechaVencimiento": "24/08/2025",
+    "Estado": "En curso"
   }
 ]
