@@ -28,7 +28,7 @@
         </div>
 
         <div class="col-6 col-sm-3 col-lg-2">
-            <label class="form-label mb-1">Tamaño de página</label>
+            <label class="form-label mb-1">Tamaño de pagina</label>
             <select name="Tamano" class="form-select form-select-sm">
                 <option value="5" selected="@(Model.Tamano == 5)">5</option>
                 <option value="6" selected="@(Model.Tamano == 6)">6</option>
@@ -52,7 +52,7 @@
     <div class="card shadow-sm">
         <div class="card-header py-2">
             <strong>Resultados</strong>
-            <span class="text-muted">· Página @Model.Pagina de @Model.TotalPaginas · Total @Model.TotalRegistros</span>
+            <span class="text-muted">· Pagina @Model.Pagina de @Model.TotalPaginas · Total @Model.TotalRegistros</span>
         </div>
 
         <div class="card-body p-0">
@@ -66,9 +66,10 @@
                     <table class="table table-sm table-striped table-hover align-middle mb-0">
                         <thead class="table-light">
                             <tr>
-                                <th style="width:50%;">Tarea</th>
+                                <th style="width:45%;">Tarea</th>
                                 <th style="width:20%;">Vencimiento</th>
                                 <th style="width:20%;">Estado</th>
+                                <th style="width:15%;">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -79,10 +80,25 @@
                                 : estado.Contains("curso") ? "bg-info"
                                 : "bg-secondary";
 
+                                var esEditable = !estado.StartsWith("final"); // solo pendiente / en curso
+                                var id = Model.IndexOfInAll(t);               // índice real en el JSON
+
                                 <tr>
                                     <td>@t.NombreTarea</td>
                                     <td>@t.FechaVencimiento</td>
                                     <td><span class="badge @clase">@t.Estado</span></td>
+                                    <td>
+                                        @if (esEditable && id >= 0)
+                                        {
+                                            <a class="btn btn-outline-primary btn-sm"
+                                               asp-page="./Editar"
+                                               asp-route-id="@id">Editar</a>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted small">—</span>
+                                        }
+                                    </td>
                                 </tr>
                             }
                         </tbody>

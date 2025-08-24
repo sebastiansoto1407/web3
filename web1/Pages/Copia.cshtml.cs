@@ -40,7 +40,6 @@ namespace web1.Pages
 
         public void OnGet()
         {
-            //cargar o recargar datos
             if (_todas.Count == 0 || Refrescar)
             {
                 var ruta = Path.Combine(_env.WebRootPath, "data", "tareas.json");
@@ -79,6 +78,8 @@ namespace web1.Pages
                 .Take(Tamano)
                 .ToList();
         }
+
+        public int IndexOfInAll(TareaJson t) => _todas.IndexOf(t);
 
         private static string NormalizarEstado(string? estado)
         {

@@ -1,0 +1,55 @@
+﻿@page "{id:int}"
+@model web1.Pages.EditarModel
+@{
+    Layout = "_Layoutcopia";
+    ViewData["Title"] = "Editar tarea";
+}
+
+<div class="container mt-3">
+    <h3 class="mb-3">Editar tarea</h3>
+
+    @if (!string.IsNullOrEmpty(Model.MensajeBloqueo))
+    {
+        <div class="alert alert-warning">@Model.MensajeBloqueo</div>
+        <a asp-page="./Copia" class="btn btn-secondary">Volver</a>
+    }
+    else
+    {
+        <form method="post" class="row g-3">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="col-12">
+                <label asp-for="Input.NombreTarea" class="form-label">Nombre de la tarea</label>
+                <input asp-for="Input.NombreTarea" class="form-control" />
+                <span asp-validation-for="Input.NombreTarea" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-6">
+                <label asp-for="Input.FechaVencimiento" class="form-label">Vencimiento</label>
+                <input asp-for="Input.FechaVencimiento" type="date" class="form-control" />
+                <span asp-validation-for="Input.FechaVencimiento" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-6">
+                <label asp-for="Input.Estado" class="form-label">Estado</label>
+                <select asp-for="Input.Estado" class="form-select">
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En curso">En curso</option>
+                    <option value="Finalizado">Finalizado</option>
+                </select>
+                <span asp-validation-for="Input.Estado" class="text-danger"></span>
+            </div>
+
+            <div class="col-12 d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                <a asp-page="./Copia" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
+        </form>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

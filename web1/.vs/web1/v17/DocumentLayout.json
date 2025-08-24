@@ -19,6 +19,14 @@
       "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:wwwroot\\data\\tareas.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\pages\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\pages\\editar.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\editar.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\pages\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,24 +55,49 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Crear.cshtml.cs",
-              "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Crear.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Crear.cshtml.cs",
-              "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Crear.cshtml.cs*",
-              "RelativeToolTip": "Pages\\Crear.cshtml.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "Editar.cshtml.cs",
+              "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Editar.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Editar.cshtml.cs",
+              "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Editar.cshtml.cs",
+              "RelativeToolTip": "Pages\\Editar.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T00:03:19.365Z",
+              "WhenOpened": "2025-08-24T19:34:26.522Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Editar.cshtml",
+              "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Editar.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Editar.cshtml",
+              "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Editar.cshtml",
+              "RelativeToolTip": "Pages\\Editar.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-24T19:34:03.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Crear.cshtml.cs",
+              "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Crear.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Crear.cshtml.cs",
+              "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Crear.cshtml.cs",
+              "RelativeToolTip": "Pages\\Crear.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T00:03:19.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Crear.cshtml",
               "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Crear.cshtml",
               "RelativeDocumentMoniker": "Pages\\Crear.cshtml",
-              "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Crear.cshtml*",
-              "RelativeToolTip": "Pages\\Crear.cshtml*",
+              "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Crear.cshtml",
+              "RelativeToolTip": "Pages\\Crear.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-22T00:02:51.631Z",
@@ -78,7 +111,7 @@
               "RelativeDocumentMoniker": "wwwroot\\data\\tareas.json",
               "ToolTip": "E:\\web3tareas\\web3\\web1\\wwwroot\\data\\tareas.json",
               "RelativeToolTip": "wwwroot\\data\\tareas.json",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAcwKUAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAcwK8AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-08-20T02:20:22.653Z",
               "EditorCaption": ""
@@ -102,9 +135,9 @@
               "Title": "Copia.cshtml.cs",
               "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Copia.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Copia.cshtml.cs",
-              "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Copia.cshtml.cs*",
-              "RelativeToolTip": "Pages\\Copia.cshtml.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Copia.cshtml.cs",
+              "RelativeToolTip": "Pages\\Copia.cshtml.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-15T23:38:55.259Z",
               "EditorCaption": ""
@@ -117,14 +150,14 @@
               "RelativeDocumentMoniker": "Pages\\Copia.cshtml",
               "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Copia.cshtml*",
               "RelativeToolTip": "Pages\\Copia.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-15T23:38:24.719Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Index.cshtml",

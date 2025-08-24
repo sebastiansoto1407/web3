@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "E:\\web3tareas\\web3\\web1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\pages\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\pages\\crear.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\crear.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\wwwroot\\data\\tareas.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:wwwroot\\data\\tareas.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\pages\\copia.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -23,8 +19,20 @@
       "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\wwwroot\\data\\tareas.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:wwwroot\\data\\tareas.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\pages\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\pages\\editar.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\editar.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\pages\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\pages\\crear.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|solutionrelative:pages\\crear.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F350CC42-1017-46DB-BFEF-496CBD660F9D}|web1.csproj|e:\\web3tareas\\web3\\web1\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,44 +54,71 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "Editar.cshtml.cs",
+              "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Editar.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Editar.cshtml.cs",
+              "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Editar.cshtml.cs",
+              "RelativeToolTip": "Pages\\Editar.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T19:34:26.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Editar.cshtml",
+              "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Editar.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Editar.cshtml",
+              "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Editar.cshtml",
+              "RelativeToolTip": "Pages\\Editar.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-24T19:34:03.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Crear.cshtml.cs",
               "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Crear.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Crear.cshtml.cs",
               "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Crear.cshtml.cs",
               "RelativeToolTip": "Pages\\Crear.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-22T00:03:19.365Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Crear.cshtml",
               "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Crear.cshtml",
               "RelativeDocumentMoniker": "Pages\\Crear.cshtml",
               "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Crear.cshtml",
               "RelativeToolTip": "Pages\\Crear.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-22T00:02:51.631Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "tareas.json",
               "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\wwwroot\\data\\tareas.json",
               "RelativeDocumentMoniker": "wwwroot\\data\\tareas.json",
               "ToolTip": "E:\\web3tareas\\web3\\web1\\wwwroot\\data\\tareas.json",
               "RelativeToolTip": "wwwroot\\data\\tareas.json",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAcwKUAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAcwKoAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-20T02:20:22.653Z"
+              "WhenOpened": "2025-08-20T02:20:22.653Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Index.cshtml.cs",
@@ -91,35 +126,38 @@
               "RelativeToolTip": "Pages\\Index.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-16T00:09:24.48Z"
+              "WhenOpened": "2025-08-16T00:09:24.48Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Copia.cshtml.cs",
               "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Copia.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Copia.cshtml.cs",
               "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Copia.cshtml.cs",
               "RelativeToolTip": "Pages\\Copia.cshtml.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAAAE0AAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T23:38:55.259Z"
+              "WhenOpened": "2025-08-15T23:38:55.259Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Copia.cshtml",
               "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Copia.cshtml",
               "RelativeDocumentMoniker": "Pages\\Copia.cshtml",
               "ToolTip": "E:\\web3tareas\\web3\\web1\\Pages\\Copia.cshtml",
               "RelativeToolTip": "Pages\\Copia.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-15T23:38:24.719Z"
+              "WhenOpened": "2025-08-15T23:38:24.719Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\web3tareas\\web3\\web1\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Index.cshtml",

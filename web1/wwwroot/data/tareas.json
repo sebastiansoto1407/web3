@@ -165,8 +165,13 @@
     "Estado": "Pendiente"
   },
   {
-    "NombreTarea": "comprar soda",
-    "FechaVencimiento": "24/08/2025",
-    "Estado": "En curso"
+    "NombreTarea": "comprar soda 2",
+    "FechaVencimiento": "31/08/2025",
+    "Estado": "Pendiente"
+  },
+  {
+    "NombreTarea": "ejemplo",
+    "FechaVencimiento": "30/08/2025",
+    "Estado": "Pendiente"
   }
 ]
